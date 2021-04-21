@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "miiin 개발로그"
+title                    : "희노애락앤롤 개발로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "miiin"
@@ -97,8 +97,8 @@ analytics:
 author:
   name             : "miiin"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "디버깅하고 쇼핑하는 개발자"
-  location         : "테헤란로"
+  bio              : # "디버깅하고 쇼핑하는 개발자"
+  location         : "강남구 테헤란로"
   email            :
   links:
     - label: "Email"
