@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서버 백엔드 엔지니어</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        font-size: 16px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.75em;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        margin-top: 30px;
+      }
+
+      h3 {
+        font-size: 1.5em;
+      }
+
+      h4 {
+        font-size: 1.25em;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+
+      a {
+        color: #0366d6;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      ul,
+      ol {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      code {
+        font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        background-color: #f8f9fa;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      pre {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 3px;
+        overflow-x: auto;
+        margin-bottom: 15px;
+      }
+
+      blockquote {
+        border-left: 4px solid #ddd;
+        padding-left: 15px;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f8f9fa;
+      }
+
+      .company {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .company-link {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .job-title {
+        font-weight: bold;
+      }
+
+      .period {
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .project-link {
+        display: inline-block;
+        margin-right: 15px;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>About Me</h1>
+    <p>
+      Java & Spring / AWS 기반의 10년차 서버 백엔드 개발자 및 기술 아키텍트로 B2B SaaS 플랫폼, 특히 e-commerce와 물류 도메인에 전문성을 가지고
+      있습니다. 대규모 분산 시스템 설계, 도메인 주도 설계 원칙 구현, 복잡한 비즈니스 환경에서 성능 최적화가 제 주요 역량입니다.
+    </p>
+    <p>
+      복잡한 비즈니스 요구사항을 우아하고 유지보수 가능한 코드로 변환하는 동시에 확장성과 신뢰성을 보장하는 것을 목표로 합니다. 클린 코드 원칙, SOLID
+      설계, 테스트 주도 개발에 기반한 코딩 관행을 철저히 지키고 있습니다.
+    </p>
+    <p>
+      매일 수백만 건의 트랜잭션을 처리하는 미션 크리티컬 시스템의 설계 및 구현을 담당해 왔으며, 동시성, 성능, 데이터 일관성에 중점을 두고 있습니다.
+    </p>
+
+    <h2>Experience</h2>
+    <div class="company">
+      E-Commerce 플랫폼 회사
+      <a href="https://www.example.com/" class="company-link">[https://www.example.com/](https://www.example.com/)</a>
+      <div class="job-title">기술 아키텍트</div>
+      <div class="period">2021.05 ~ 현재</div>
+      <p>일 거래량 200만+의 e-commerce 서비스</p>
+      <ul>
+        <li>분산 주문 처리 시스템의 아키텍처 설계 및 구현 주도</li>
+        <li>이벤트 기반 아키텍처를 사용한 재고 관리 시스템 재설계, 데이터 불일치 95% 감소</li>
+        <li>무중단 배포 파이프라인 구현, 99.99% 시스템 가용성 달성</li>
+        <li>5개 엔지니어링 팀 전반에 걸쳐 코딩 표준 및 모범 사례 수립</li>
+      </ul>
+    </div>
+
+    <div class="company">
+      물류 기술 회사
+      <a href="https://www.example.com/" class="company-link">[https://www.example.com/](https://www.example.com/)</a>
+      <div class="job-title">시니어 백엔드 개발자</div>
+      <div class="period">2017.03 ~ 2021.04</div>
+      <p>월 5천만 달러+ 거래를 처리하는 물류 플랫폼</p>
+      <ul>
+        <li>월 5천만 달러+ 거래를 처리하는 확장 가능한 정산 시스템 개발</li>
+        <li>레거시 모놀리식 애플리케이션을 마이크로서비스 아키텍처로 마이그레이션</li>
+        <li>데이터베이스 쿼리 최적화, 평균 API 응답 시간을 850ms에서 120ms로 단축</li>
+        <li>85%+ 코드 커버리지를 달성하는 포괄적인 테스트 전략 구현</li>
+      </ul>
+    </div>
+
+    <div class="company">
+      핀테크 스타트업
+      <a href="https://www.example.com/" class="company-link">[https://www.example.com/](https://www.example.com/)</a>
+      <div class="job-title">백엔드 개발자</div>
+      <div class="period">2015.06 ~ 2017.02</div>
+      <p>혁신적인 결제 처리 서비스</p>
+      <ul>
+        <li>여러 금융 기관과 통합된 안전한 결제 처리 API 구축</li>
+        <li>일일 금융 조정을 위한 내결함성 배치 처리 시스템 구현</li>
+        <li>메시징 큐를 사용한 실시간 알림 시스템 설계 및 개발</li>
+      </ul>
+    </div>
+
+    <div class="company">
+      엔터프라이즈 솔루션 제공업체
+      <a href="https://www.example.com/" class="company-link">[https://www.example.com/](https://www.example.com/)</a>
+      <div class="job-title">소프트웨어 엔지니어</div>
+      <div class="period">2013.08 ~ 2015.05</div>
+      <p>연매출 1000억의 중견 SI 기업</p>
+      <ul>
+        <li>엔터프라이즈 고객을 위한 맞춤형 비즈니스 애플리케이션 개발</li>
+        <li>이기종 시스템 간 데이터 통합 솔루션 구현</li>
+        <li>중요 비즈니스 애플리케이션을 위한 자동화된 테스트 프레임워크 생성</li>
+      </ul>
+    </div>
+
+    <h2>역량</h2>
+    <h3>2018.04.01 ~ 현재</h3>
+    <ul>
+      <li>E-Commerce 플랫폼 기술 아키텍처 총괄 (2021.05.01 ~ 현재)</li>
+      <li>클라우드 네이티브 마이크로서비스 아키텍처 설계 및 구현 (2019.06.01 ~ 2021.04.30)</li>
+      <li>결제 시스템 개편 TF 리드 (2018.04.01 ~ 2018.08.31)</li>
+    </ul>
+
+    <h3>레거시 시스템 리팩토링/리엔지니어링</h3>
+    <ul>
+      <li>모놀리식 애플리케이션을 마이크로서비스로 마이그레이션 (2020.01.01 ~ 2020.12.31)</li>
+      <li>RDS -> Aurora 마이그레이션 (2019.06.01 ~ 2019.07.15)</li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=example" class="project-link"
+          >[결제 시스템 AWS 마이그레이션](https://www.youtube.com/watch?v=example)</a
+        >(2019.02.01 ~ 2019.05.31)
+      </li>
+      <li>
+        <a href="https://blog.example.com/order-system" class="project-link">[주문 시스템 개편](https://blog.example.com/order-system)</a>(2018.08.01
+        ~ 2018.11.30)
+      </li>
+      <li><a href="http://bit.ly/example123" class="project-link">[결제 시스템 개편](http://bit.ly/example123)</a>(2018.04.01 ~ 2018.07.31)</li>
+      <li><a href="http://bit.ly/example456" class="project-link">[정산 시스템 개편](http://bit.ly/example456)</a>(2017.01.01 ~ 2017.07.31)</li>
+    </ul>
+
+    <h3>대용량 데이터 처리 및 성능 개선</h3>
+    <ul>
+      <li>PostgreSQL SlowQuery 전체 튜닝</li>
+      <li>일 주문 200만건의 정산 시스템 API / Batch 개발 및 운영</li>
+      <li>일 거래 100만건의 결제 시스템 메시지큐 / API / Batch 개발 및 운영</li>
+      <li>Message Queue (AWS SQS) 를 이용한 비동기 결제 처리 / 메일 발송 시스템 구현</li>
+      <li><a href="https://blog.example.com/batch" class="project-link">[대용량 Batch 시스템 구현](https://blog.example.com/batch)</a></li>
+      <li>
+        <a href="https://blog.example.com/performance" class="project-link"
+          >[Pinpoint/Ngrinder를 통한 성능 테스트 및 개선](https://blog.example.com/performance)</a
+        >
+      </li>
+      <li>
+        <a href="https://blog.example.com/db-performance" class="project-link"
+          >[JPA / Querydsl / MySQL 성능 개선](https://blog.example.com/db-performance)</a
+        >
+      </li>
+    </ul>
+
+    <h3>견고한 데이터 구조 및 애플리케이션 설계</h3>
+    <ul>
+      <li>일 500억원 & 200만건 주문에서의 일일 정산</li>
+      <li>감사 추적(Audit Trail)을 위한 결제/환불/보상의 Update가 없는 도메인 설계</li>
+      <li>감사 추적(Audit Trail)을 위한 이벤트 기반 결제 도메인 설계</li>
+      <li>정산 프로젝트 TestCode 2000개 / Line Coverage 75%</li>
+    </ul>
+
+    <h3>AWS 클라우드 인프라 운영 관리</h3>
+    <ul>
+      <li>[AWS] Jenkins / Code Deploy / Beanstalk 을 이용한 무중단 배포</li>
+      <li>[AWS] 컨테이너 기반 마이크로서비스 아키텍처 (ECS, EKS)</li>
+      <li>[AWS] 서버리스 아키텍처 설계 및 구현 (Lambda, API Gateway)</li>
+      <li>[AWS] 인프라스트럭처 자동화 (CloudFormation, Terraform)</li>
+    </ul>
+
+    <h2>Skill</h2>
+    <p>현재 업무에 사용중 혹은 사용했던 기술들입니다.</p>
+    <h3>Backend</h3>
+    <ul>
+      <li>Java, Spring Boot 3.x, Spring Cloud, Spring Data JPA/Redis, Spring Security, Spring Batch, Spring WebFlux</li>
+      <li>JPA, Querydsl, Hibernate</li>
+      <li>JUnit/Mockito, JMeter, SonarQube</li>
+      <li>Gradle, Maven</li>
+      <li>IntelliJ IDEA</li>
+    </ul>
+
+    <h3>DevOps</h3>
+    <ul>
+      <li>AWS (ECS, EKS, Lambda, Aurora, DynamoDB, ElastiCache)</li>
+      <li>Docker, Kubernetes, Terraform</li>
+      <li>MySQL, PostgreSQL, Redis</li>
+      <li>Jenkins, GitLab CI/CD</li>
+      <li>Prometheus, Grafana, DataDog</li>
+      <li>Nginx, Tomcat</li>
+    </ul>
+
+    <h3>Domain Expertise</h3>
+    <ul>
+      <li>재고 관리 시스템 설계</li>
+      <li>주문/결제 프로세스 최적화</li>
+      <li>배송 추적 시스템 구현</li>
+      <li>프로모션 엔진 아키텍처</li>
+      <li>정산 시스템 개발</li>
+    </ul>
+
+    <h2>Opensource</h2>
+    <h3>개인 블로그</h3>
+    <a href="https://blog.example.com/" class="company-link">[https://blog.example.com/](https://blog.example.com/)</a>
+    <p>개인 기술 블로그</p>
+    <ul>
+      <li>업무에서 만난 문제, 회사에서 사용해야할 기술, 팀내 많은 분들이 실수하는 부분 등을 자세히 정리하여 공유하기 위한 블로그</li>
+      <li>평일 평균 PV 5,000 ~ 6,000, MAU 3.5만, 월 PV 12만</li>
+      <li>2017년 부터 꾸준히 작성하고 있으며 현재 누적 PV 320만</li>
+    </ul>
+
+    <h3>spring-batch-extensions</h3>
+    <a href="https://github.com/yourusername/spring-batch-extensions" class="company-link"
+      >[https://github.com/yourusername/spring-batch-extensions](https://github.com/yourusername/spring-batch-extensions)</a
+    >
+    <p>Spring Batch를 위한 확장 라이브러리</p>
+    <ul>
+      <li>대용량 데이터셋과 함께 사용할 때 성능이 향상된 사용자 정의 ItemReader 구현체 포함</li>
+      <li>복잡한 처리 패턴을 단순화하기 위한 확장 기능 제공</li>
+      <li>Spring Batch를 사용하는 개발자들의 개발 경험 향상에 초점</li>
+    </ul>
+
+    <h3>Spring Batch 오픈소스 PR</h3>
+    <ul>
+      <li>e-commerce 서비스를 운영하면서 Spring Batch에 본격적으로 입문</li>
+      <li>업무 진행하면서 발견된 이슈에 한해서 계속 PR 요청</li>
+    </ul>
+
+    <h3>aws-testing-toolkit</h3>
+    <a href="https://github.com/yourusername/aws-testing-toolkit" class="company-link"
+      >[https://github.com/yourusername/aws-testing-toolkit](https://github.com/yourusername/aws-testing-toolkit)</a
+    >
+    <p>AWS 서비스 로컬 테스트를 위한 라이브러리</p>
+    <ul>
+      <li>AWS 서비스 개발 시 OTP 인증이 필요한게 귀찮아서 개발</li>
+      <li>여러 개발자들이 격리화된 AWS 환경에서 개발할 수 있게 지원하는 Mocking 라이브러리</li>
+      <li>별도로 Docker 설치 없이 프로젝트를 실행할수 있게 H2와 같은 사용성 지원</li>
+      <li>LocalStack 이전에 주로 사용되었으며, SQS, S3, DynamoDB 지원</li>
+    </ul>
+
+    <h3>ddd-building-blocks</h3>
+    <a href="https://github.com/yourusername/ddd-building-blocks" class="company-link"
+      >[https://github.com/yourusername/ddd-building-blocks](https://github.com/yourusername/ddd-building-blocks)</a
+    >
+    <p>Java용 DDD 빌딩 블록 라이브러리</p>
+    <ul>
+      <li>도메인 주도 설계 구현을 위한 경량 라이브러리</li>
+      <li>값 객체, 엔티티, 애그리게이트, 도메인 이벤트 등 제공</li>
+      <li>실제 프로젝트에서 사용된 패턴과 사례를 기반으로 구현</li>
+    </ul>
+
+    <h2>Education</h2>
+    <div class="company">
+      클라우드 네이티브 애플리케이션 아키텍처 워크샵
+      <a href="https://github.com/yourusername/cloud-native-workshop" class="company-link"
+        >[https://github.com/yourusername/cloud-native-workshop](https://github.com/yourusername/cloud-native-workshop)</a
+      >
+      <div class="period">2021.03 ~ 2021.04</div>
+      <p>클라우드 네이티브 애플리케이션 설계 및 구현 워크샵</p>
+      <ul>
+        <li>마이크로서비스 아키텍처 설계 패턴</li>
+        <li>Kubernetes 환경에서의 애플리케이션 배포 및 운영</li>
+        <li>서비스 메시 구현 및 활용 (Istio)</li>
+      </ul>
+    </div>
+
+    <div class="company">
+      AWS 솔루션 아키텍트 프로페셔널 자격증
+      <div class="period">2020.06</div>
+      <p>AWS 공인 솔루션 아키텍트 - 프로페셔널</p>
+      <ul>
+        <li>AWS 클라우드 아키텍처 설계 및 구현</li>
+        <li>고가용성, 확장성, 내결함성을 갖춘 인프라 구축</li>
+      </ul>
+    </div>
+
+    <div class="company">
+      Kubernetes 관리자 자격증 (CKA)
+      <div class="period">2019.09</div>
+      <p>Cloud Native Computing Foundation 인증</p>
+      <ul>
+        <li>Kubernetes 클러스터 구성 및 관리</li>
+        <li>컨테이너화된 애플리케이션 배포 및 운영</li>
+      </ul>
+    </div>
+
+    <div class="company">
+      서울대학교
+      <div class="period">2011 ~ 2013</div>
+      <p>컴퓨터 과학 석사</p>
+      <ul>
+        <li>분산 시스템 및 데이터베이스 기술 전문</li>
+      </ul>
+    </div>
+
+    <div class="company">
+      고려대학교
+      <div class="period">2007 ~ 2011</div>
+      <p>컴퓨터공학 학사</p>
+      <ul>
+        <li>우등 졸업 (GPA: 3.9/4.0)</li>
+      </ul>
+    </div>
+
+    <h2>외부 활동</h2>
+    <p>여러 주제로 발표와 기고, 출판을 해왔습니다.</p>
+    <ul>
+      <li>
+        <a href="https://www.youtube.com/watch?v=example1"
+          >[Tech Conference 2023 - 대규모 e-commerce 플랫폼의 성능 최적화](https://www.youtube.com/watch?v=example1)</a
+        >
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=example2"
+          >[AWS Summit 2022 - Event-Driven Architecture 실전 구현](https://www.youtube.com/watch?v=example2)</a
+        >
+      </li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=example3"
+          >[Spring Conference 2021 - Spring Batch로 대용량 데이터 처리하기](https://www.youtube.com/watch?v=example3)</a
+        >
+      </li>
+      <li><a href="https://example.com/book">[Spring Boot와 AWS로 구현하는 MSA](https://example.com/book)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=example4">[Tech Interview](https://www.youtube.com/watch?v=example4)</a></li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=example5"
+          >[2020 클라우드 네이티브 컨퍼런스 - Kubernetes 실전 활용](https://www.youtube.com/watch?v=example5)</a
+        >
+      </li>
+      <li><a href="https://www.example.com/course">[온라인 강의 - Spring Boot 마스터 클래스](https://www.example.com/course)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=example6">[2019 개발자 컨퍼런스 - DDD 실전 구현](https://www.youtube.com/watch?v=example6)</a></li>
+      <li>
+        <a href="https://www.youtube.com/watch?v=example7">[2018 테크 세미나 - 테스트 자동화 전략](https://www.youtube.com/watch?v=example7)</a>
+      </li>
+      <li><a href="http://magazine.example.com/">[IT 매거진 기고 - AWS와 무중단 배포 서비스](http://magazine.example.com/)</a></li>
+    </ul>
+  </body>
+</html>
