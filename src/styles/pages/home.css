@@ -2,8 +2,15 @@
   margin-bottom: 40px;
 }
 
+.home-intro h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
 .home-intro p {
-  margin: 0;
+  margin: 0 0 12px;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -13,28 +20,18 @@
 }
 
 .home-section-title {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   margin: 0 0 12px;
 }
 
 .home-list {
-  list-style: none;
-  padding: 0;
+  list-style: disc;
+  padding-left: 20px;
   margin: 0;
 }
 
-.home-list-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-.home-date {
-  font-size: 12px;
-  color: #999;
-  flex-shrink: 0;
-  margin-left: 12px;
+.home-list li {
+  margin-bottom: 6px;
+  font-size: 15px;
 }
