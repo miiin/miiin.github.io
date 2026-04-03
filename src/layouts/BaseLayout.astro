@@ -1,0 +1,60 @@
+---
+import logo from '../assets/soop_logo_2.png';
+import '../styles/global.css';
+
+const {
+  title = "soop's Blog",
+  description = "",
+} = Astro.props;
+---
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Feed"
+      href="/rss.xml"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1><a href="/"><img src={logo.src} width="30" height="auto" alt="soop's Blog" /></a></h1>
+
+        <nav>
+          </a>
+          <a
+            href="/posts"
+            data-active={Astro.url.pathname.startsWith("/posts") ? "true" : "false"}
+          >
+            글
+          </a>
+          <a
+            href="/musics"
+            data-active={Astro.url.pathname.startsWith("/musics") ? "true" : "false"}
+          >
+            음악
+          </a>
+          <a
+            href="/think"
+            data-active={Astro.url.pathname.startsWith("/think") ? "true" : "false"}
+          >
+            메모
+          </a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer>
+      </footer>
+    </div>
+  </body>
+</html>

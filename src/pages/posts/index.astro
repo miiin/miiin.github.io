@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import "../../styles/pages/posts.css";
+
+const DAILY_TAG = "daily";
+const posts = await getCollection(
+  "blog",
+  ({ data }) => (data.tags ?? [])
+);
+posts.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+---
+
+<BaseLayout>
+  <section>
+    {posts.length === 0 ? (
+      <p>아직 작성된 글이 없어요.</p>
+    ) : (
+      <ul class="posts-list">
+        {posts.map((post) => (
+          <li class="post-item">
+            <a
+              href={`/posts/${post.slug}`}
+              class="post-link"
+            >
+              {post.data.title}
+            </a>
+            <div class="post-date">
+              {post.data.date}
+            </div>
+            {(post.data.tags ?? []).length > 0 && (
+              <div class="post-tags">
+                {post.data.tags!.map((tag: string) => (
+                  <a href={`/tags/${encodeURIComponent(tag)}`} class="post-tag-link">#{tag}</a>
+                ))}
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</BaseLayout>

@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import "../../styles/pages/think.css";
+
+const thoughts = await getCollection("think");
+thoughts.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+
+// const renderedThoughts = await Promise.all(
+//   thoughts.map(async (item) => ({
+//     data: item.data,
+//     Content: (await item.render()).Content,
+//   }))
+// );
+const renderedThoughts = [] as any[];
+---
+
+<BaseLayout title="메모">
+  <section class="think-grid">
+    {thoughts.length === 0 ? (
+      <p>아직 생각이 없어요.</p>
+    ) : (
+      renderedThoughts.map((item) => (
+        <article class="think-card">
+          <div class="think-meta">
+            <span>{item.data.date}</span>
+            {item.data.title && <span>· {item.data.title}</span>}
+          </div>
+
+          <div class="think-body">
+            <item.Content />
+          </div>
+
+          {item.data.tags && item.data.tags.length > 0 && (
+            <div class="think-tags">
+              {item.data.tags.map((tag) => (
+                <span class="think-tag">#{tag}</span>
+              ))}
+            </div>
+          )}
+        </article>
+      ))
+    )}
+  </section>
+</BaseLayout>
+

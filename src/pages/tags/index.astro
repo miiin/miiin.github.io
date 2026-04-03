@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import "../../styles/pages/tags.css";
+
+const posts = await getCollection("blog");
+const tagCount = new Map<string, number>();
+
+for (const post of posts) {
+  for (const tag of post.data.tags ?? []) {
+    tagCount.set(tag, (tagCount.get(tag) ?? 0) + 1);
+  }
+}
+
+const tags = Array.from(tagCount.entries()).sort((a, b) =>
+  a[0].localeCompare(b[0], "ko")
+);
+---
+
+<BaseLayout>
+  <section>
+    <h2 class="section-title">태그</h2>
+
+    {tags.length === 0 ? (
+      <p>아직 태그가 없어요.</p>
+    ) : (
+      <ul class="tags-list">
+        {tags.map(([tag, count]) => (
+          <li class="tag-item">
+            <a
+              href={`/tags/${encodeURIComponent(tag)}`}
+              class="tag-link"
+            >
+              #{tag} ({count})
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</BaseLayout>

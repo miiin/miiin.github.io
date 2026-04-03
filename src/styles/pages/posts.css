@@ -1,0 +1,56 @@
+/* Posts list styles */
+.posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  margin-bottom: 24px;
+}
+
+.post-link {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+}
+
+.post-tags {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #777;
+}
+
+.post-tag-link {
+  margin-right: 6px;
+  text-decoration: none;
+}
+
+/* Post detail styles */
+.post-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.post-meta {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.post-tags-header {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+.post-content {
+  font-size: 15px;
+}

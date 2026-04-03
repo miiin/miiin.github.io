@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import "../../styles/pages/musics.css";
+
+async function getSpotifyThumbnail(url: string) {
+  try {
+    const res = await fetch(
+      `https://open.spotify.com/oembed?url=${encodeURIComponent(url)}`
+    );
+    if (!res.ok) return null;
+    const data = await res.json();
+    return typeof data.thumbnail_url === "string" ? data.thumbnail_url : null;
+  } catch (err) {
+    console.error("spotify thumbnail fetch error", err);
+    return null;
+  }
+}
+
+const musics = await getCollection("music");
+musics.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+
+const thumbMap = new Map<string, string>();
+await Promise.all(
+  musics.map(async ({ data }) => {
+    if (data.cover || !data.link) return;
+    const thumb = await getSpotifyThumbnail(data.link);
+    if (thumb) thumbMap.set(data.link, thumb);
+  })
+);
+
+const renderedMusics = await Promise.all(
+  musics.map(async (item) => ({
+    slug: item.slug,
+    data: item.data,
+    cover: item.data.cover ?? (item.data.link ? thumbMap.get(item.data.link) : null),
+    Content: (await item.render()).Content,
+  }))
+);
+
+// 날짜별로 그룹화
+function formatDateHeader(dateString: string): string {
+  const date = new Date(dateString);
+  const months = [
+    'JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+    'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'
+  ];
+  return `${months[date.getMonth()]} ${date.getFullYear()}`;
+}
+
+function getDateKey(dateString: string): string {
+  const date = new Date(dateString);
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+}
+
+const groupedMusics = new Map<string, typeof renderedMusics>();
+renderedMusics.forEach((music) => {
+  const key = getDateKey(music.data.date);
+  if (!groupedMusics.has(key)) {
+    groupedMusics.set(key, []);
+  }
+  groupedMusics.get(key)!.push(music);
+});
+
+const sortedGroups = Array.from(groupedMusics.entries()).sort((a, b) => {
+  return a[0] < b[0] ? 1 : -1;
+});
+---
+
+<BaseLayout>
+  <section class="music-container">
+    {renderedMusics.length === 0 ? (
+      <p>아직 음악관련 글이 없어요.</p>
+    ) : (
+      sortedGroups.map(([dateKey, items]) => (
+        <div class="music-date-group">
+          <div class="music-grid">
+            {items.map((item) => (
+              <div class="music-item">
+                <article class="music-card">
+                  {item.data.date && (<div class="music-date">{item.data.date}</div>)}
+                  {item.data.embedCode ? (
+                    <div class="music-embed" set:html={item.data.embedCode} />
+                  ) : item.cover ? (
+                    <img src={item.cover} alt={item.data.title} class="music-cover" loading="lazy" />
+                  ) : null}
+                </article>
+                
+                <div class="music-info">
+                
+                  <div class="music-title">{item.data.artist && `${item.data.artist} - `}{item.data.title}</div>
+                 {item.Content && (
+                  <div class="music-comment">
+                    <item.Content />
+                  </div>
+                 )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    )}
+  </section>
+</BaseLayout>
