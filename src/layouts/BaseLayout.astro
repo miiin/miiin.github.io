@@ -51,6 +51,12 @@ const {
           >
             메모
           </a>
+          <a
+            href="/guestbook"
+            data-active={Astro.url.pathname.startsWith("/guestbook") ? "true" : "false"}
+          >
+            방명록
+          </a>
           <button class="theme-toggle" id="theme-toggle" aria-label="테마 변경">
             <span class="theme-icon"></span>
           </button>

@@ -1,0 +1,15 @@
+.guestbook-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.guestbook-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+.guestbook-comments {
+  margin-top: 16px;
+}
