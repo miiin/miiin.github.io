@@ -1,21 +1,51 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/pages/now.css";
+
+const lastUpdated = new Date("2026-04-03");
+const now = new Date();
+const diffMs = now.getTime() - lastUpdated.getTime();
+const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+const years = Math.floor(totalDays / 365);
+const weeks = Math.floor((totalDays % 365) / 7);
+const days = (totalDays % 365) % 7;
+
+const parts: string[] = [];
+if (years > 0) parts.push(`${years}년`);
+if (weeks > 0) parts.push(`${weeks}주`);
+if (days > 0) parts.push(`${days}일`);
+const timeAgo = parts.length > 0 ? `${parts.join(" ")} 전` : "오늘";
 ---
 
 <BaseLayout>
   <article>
-    <h2 class="now-title">지금</h2>
-    <p class="now-description">
-      (지금 내가 하고 있는 일/생각들을 가볍게 적는 공간)
-    </p>
+    <h1>What I'm doing right now</h1>
 
-    <p>
-      예시)
-      <br />
-      - Astro로 블로그 구조 잡는 중<br />
-      - 페스티벌 관련 사이드 프로젝트 정리<br />
-      - 읽고 있는 책 / 보고 있는 영상 등 …
-    </p>
+    <details class="now-details" style="cursor: pointer;">
+      <summary>이게 뭔가요?</summary>
+      <p>여기에는 제가 최근 집중하고 있는 것들과 하고 일들을 기록합니다. 좀 더 생생하고 흥미로운 "about" 페이지에요! <a href="https://nownownow.com" target="_blank" rel="noopener noreferrer">nownownow.com</a>에서 영감을 받았어요.</p>
+    </details>
+    <div>
+      <br/>
+      <i>
+        마지막 업데이트는 {timeAgo} 서울, 삼성동 사무실에서 작성되었습니다.
+      </i>
+      <p>
+        최근 안정감있고 평온한 흐름 속에서 보내고 있습니다. 지난해 말부터 드럼을 배우기 시작했고, 초심자로 무엇인가를 배우는 것이 새삼 오랜만이더라구요.
+        단순히 악기를 배우는 것을 넘어 꾸준히 정진하여 습득하는 과정 자체에 대해 생각해보는 계기가 되었고, 자연스럽게 드럼뿐만이 아니라 무언가를 대하는 전반적인 태도에 대해 고찰했습니다. 어쨌든 최근 무척이나 즐겁게 몰입하여 이어가고있는 취미입니다.
+      </p>
+      <p>
+        눈뜨면 새로운 기술들이 하루가 다르게 쏟아지고 있는 요즘, 개발이라는 업무를 함에 있어서도 드럼을 배우며 느꼈던 새로운 시각과 태도를 적용해보고 싶다는 생각이 들었습니다. 꾸준하게 과정에 집중하는 방향으로 조금씩 나아가고자 합니다.
+      </p>
+
+    </div>
+
+    <div>
+      <h2>페블</h2>
+      <p>페스티벌과 음악을 좋아하는 저는 페스트벌 타임테이블 서비스 <a href="http://febble.live" style="col">페블</a>을 운영하고 있습니다.</p>
+      <p class="now-description">여러 아티스트가 나오는 페스티벌의 특성상 모르는 아티스트가 나올 경우 미리 정보를 찾아봐야 하는 수고스러움이 많은데, 간단하게 아티스트의 음악을 미리듣고 나만의 페스티벌 타임테이블을 생성해서 이미지로 저장 가능하게 하는 것이 서비스의 주요 기능입니다.</p>
+      <p>이 서비스는 “이런 게 있으면 좋겠는데, 왜 없지?”라는 작은 생각에서 시작되었습니다. 직접 필요를 느낀 만큼, 하나하나 만들어가는 과정도 자연스럽게 즐겁게 이어지고 있습니다. 데이터 관리를 정말 부지런히해야 하는 서비스이지만, 좋아하는 분야의 정보이기에 더욱 애정을 가지고 운영을 하고 있습니다. 아직 개선하고 싶은 부분과 추가하고 싶은 기능들이 많지만 본업과 병행하다 보니 속도가 더딘 점은 아쉬움으로 남습니다. 그래도 조금씩 꾸준히 발전시켜 나가고 있습니다.</p>
+      <p class="now-description">페스티벌에서 페블을 사용하는 사람을 자만추하는 그날까지!</p>
+    </div>
   </article>
 </BaseLayout>

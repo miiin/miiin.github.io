@@ -36,6 +36,6 @@
 
 .tag-post-date {
   font-size: 12px;
-  color: #999;
+  color: var(--text-subtle);
   margin-top: 4px;
 }

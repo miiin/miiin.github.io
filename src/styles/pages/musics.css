@@ -10,7 +10,7 @@
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: #333;
+  color: var(--text-dark);
   margin: 0 0 24px;
   text-transform: uppercase;
 }
@@ -36,13 +36,13 @@
   width: 100%;
   min-width: 240px;
   max-width: 300px;
-  background: #ffffff;
+  background: var(--card-bg);
   border: none;
   border-radius: 0;
   overflow: hidden;
   padding: 0;
   box-sizing: border-box;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px var(--card-shadow);
   margin-bottom: 12px;
 }
 
@@ -51,7 +51,7 @@
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  background: #f0f0f0;
+  background: var(--cover-placeholder);
   margin: 0;
 }
 
@@ -77,7 +77,7 @@
 
 .music-artist {
   font-size: 13px;
-  color: #000;
+  color: var(--text);
   margin: 0;
   font-weight: 400;
   line-height: 1.4;
@@ -87,13 +87,13 @@
   font-size: 13px;
   font-weight: 400;
   margin: 0;
-  color: #000;
+  color: var(--text);
   line-height: 1.4;
 }
 
 .music-label {
   font-size: 13px;
-  color: #000;
+  color: var(--text);
   margin: 0;
   font-weight: 400;
   line-height: 1.4;
@@ -101,7 +101,7 @@
 
 .music-year {
   font-size: 13px;
-  color: #000;
+  color: var(--text);
   margin: 0;
   font-weight: 400;
   line-height: 1.4;
@@ -115,8 +115,8 @@
 
 .music-tag {
   font-size: 11px;
-  color: #4a3428;
-  background: #efe6db;
+  color: var(--music-tag-text);
+  background: var(--music-tag-bg);
   border-radius: 10px;
   padding: 2px 8px;
 }
@@ -126,7 +126,7 @@
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: #a95829;
+  color: var(--link-color);
   font-weight: 600;
   text-decoration: none;
 }

@@ -1,15 +1,94 @@
 :root {
   color-scheme: light;
-  /* Classic Mac OS Color Palette */
-  --mac-bg: #c0c0c0;
-  --mac-text: #000000;
+  --bg: #ffffff;
+  --text: #000000;
+  --text-muted: #666666;
+  --text-subtle: #999999;
+  --text-dim: #777777;
+  --text-dark: #333333;
+  --link-color: #3273dc;
+  --surface: #f7f7f9;
+  --border: #eeeeee;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --tag-bg: #e9e9ef;
+  --tag-text: #555555;
+  --music-tag-bg: #efe6db;
+  --music-tag-text: #4a3428;
+  --nav-active-bg: #111111;
+  --nav-active-text: #ffffff;
+  --cover-placeholder: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #1a1a1a;
+    --text: #e0e0e0;
+    --text-muted: #999999;
+    --text-subtle: #777777;
+    --text-dim: #888888;
+    --text-dark: #cccccc;
+    --link-color: #6ea8fe;
+    --surface: #2a2a2a;
+    --border: #333333;
+    --card-bg: #2a2a2a;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --tag-bg: #3a3a3f;
+    --tag-text: #bbbbbb;
+    --music-tag-bg: #3a3028;
+    --music-tag-text: #d4b896;
+    --nav-active-bg: #e0e0e0;
+    --nav-active-text: #1a1a1a;
+    --cover-placeholder: #333333;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1a1a1a;
+  --text: #e0e0e0;
+  --text-muted: #999999;
+  --text-subtle: #777777;
+  --text-dim: #888888;
+  --text-dark: #cccccc;
+  --link-color: #6ea8fe;
+  --surface: #2a2a2a;
+  --border: #333333;
+  --card-bg: #2a2a2a;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --tag-bg: #3a3a3f;
+  --tag-text: #bbbbbb;
+  --music-tag-bg: #3a3028;
+  --music-tag-text: #d4b896;
+  --nav-active-bg: #e0e0e0;
+  --nav-active-text: #1a1a1a;
+  --cover-placeholder: #333333;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--text);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--surface);
 }
 
 body {
   margin: 0;
   font-family: 'Courier New', Courier, 'Lucida Console', Monaco, monospace;
   line-height: 1.4;
-  color: var(--mac-text);
+  color: var(--text);
+  background: var(--bg);
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
@@ -22,7 +101,8 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--link-color);
+  /* color: inherit; */
   text-decoration: none;
 }
 
@@ -41,7 +121,7 @@ header h1 {
 
 header p {
   margin: 0;
-  color: #666666;
+  color: var(--text-muted);
   font-size: 14px;
 }
 
@@ -62,8 +142,8 @@ nav a {
 }
 
 nav a[data-active='true'] {
-  background: #111;
-  color: #fff;
+  background: var(--nav-active-bg);
+  color: var(--nav-active-text);
 }
 
 footer {
