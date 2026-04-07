@@ -67,7 +67,7 @@ const sortedGroups = Array.from(groupedMusics.entries()).sort((a, b) => {
 });
 ---
 
-<BaseLayout>
+<BaseLayout title="음악" description="요즘 듣는 음악을 기록합니다.">
   <section class="music-container">
     {renderedMusics.length === 0 ? (
       <p>아직 음악관련 글이 없어요.</p>

@@ -15,9 +15,15 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+// description: frontmatter > 본문 앞 100자 > 기본값
+const description =
+  post.data.description ||
+  post.body?.replace(/[#*>\-\[\]()!`]/g, '').trim().slice(0, 100) + '…' ||
+  `${post.data.title} — soop's Blog`;
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout title={post.data.title} description={description}>
   <article>
     <h1 class="post-title">
       {post.data.title}
