@@ -1,7 +1,7 @@
 ---
 title: solanin
 artist: ASIAN KUNG-FU GENERATION
-date: '2025-12-09'
+date: '2026-04-01'
 link: 'https://open.spotify.com/track/1VQF0GyhszBnDUdtcY7hpU?si=nZtCrxC8SbO_NONHwu5mLQ'
 embedCode: '<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1VQF0GyhszBnDUdtcY7hpU?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
 tags:

@@ -15,6 +15,19 @@
   line-height: 1.6;
 }
 
+.home-about {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.home-about li {
+  margin-bottom: 4px;
+}
+
 .home-section {
   margin-bottom: 32px;
 }

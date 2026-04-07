@@ -9,4 +9,5 @@ tags:
 
 - Markdown 기반
 - Herman 스타일처럼 심플
-- 태그, RSS, sitemap까지 세팅 완료
+- 태그, RSS, sitemap 세팅 완료
+- [giscus](https://giscus.app) 기반 댓글 기능(GitHub Discussions 연동)
